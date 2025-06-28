@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{d7f0a0b2-7329-4f4e-a5cf-2ef7fe37fd8e}</ProjectGuid>
+    <RootNamespace>Game</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>E:\boostUtils\boost;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Actor.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Platform.cpp" />
+    <ClCompile Include="SceneManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h" />
+    <ClInclude Include="animation.h" />
+    <ClInclude Include="atlas.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="MenuScene.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="Platform.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="utils.h" />
+    <ClInclude Include="vector2.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\img\alert.png" />
+    <Image Include="res\img\attack_down.png" />
+    <Image Include="res\img\attack_left.png" />
+    <Image Include="res\img\attack_right.png" />
+    <Image Include="res\img\attack_up.png" />
+    <Image Include="res\img\avatar_paimon.png" />
+    <Image Include="res\img\avatar_warrior.png" />
+    <Image Include="res\img\background.png" />
+    <Image Include="res\img\bee_left_0.png" />
+    <Image Include="res\img\bee_left_1.png" />
+    <Image Include="res\img\bee_left_2.png" />
+    <Image Include="res\img\bee_left_3.png" />
+    <Image Include="res\img\bee_right_0.png" />
+    <Image Include="res\img\bee_right_1.png" />
+    <Image Include="res\img\bee_right_2.png" />
+    <Image Include="res\img\bee_right_3.png" />
+    <Image Include="res\img\boar_left_0.png" />
+    <Image Include="res\img\boar_left_1.png" />
+    <Image Include="res\img\boar_left_2.png" />
+    <Image Include="res\img\boar_left_3.png" />
+    <Image Include="res\img\boar_left_4.png" />
+    <Image Include="res\img\boar_left_5.png" />
+    <Image Include="res\img\boar_right_0.png" />
+    <Image Include="res\img\boar_right_1.png" />
+    <Image Include="res\img\boar_right_2.png" />
+    <Image Include="res\img\boar_right_3.png" />
+    <Image Include="res\img\boar_right_4.png" />
+    <Image Include="res\img\boar_right_5.png" />
+    <Image Include="res\img\F_btn_pushed.png" />
+    <Image Include="res\img\F_btn_released.png" />
+    <Image Include="res\img\menu.png" />
+    <Image Include="res\img\paimon_left_0.png" />
+    <Image Include="res\img\paimon_left_1.png" />
+    <Image Include="res\img\paimon_left_2.png" />
+    <Image Include="res\img\paimon_left_3.png" />
+    <Image Include="res\img\paimon_left_4.png" />
+    <Image Include="res\img\paimon_left_5.png" />
+    <Image Include="res\img\paimon_right_0.png" />
+    <Image Include="res\img\paimon_right_1.png" />
+    <Image Include="res\img\paimon_right_2.png" />
+    <Image Include="res\img\paimon_right_3.png" />
+    <Image Include="res\img\paimon_right_4.png" />
+    <Image Include="res\img\paimon_right_5.png" />
+    <Image Include="res\img\shadow_enemy.png" />
+    <Image Include="res\img\shadow_player.png" />
+    <Image Include="res\img\snail_left_0.png" />
+    <Image Include="res\img\snail_left_1.png" />
+    <Image Include="res\img\snail_left_2.png" />
+    <Image Include="res\img\snail_left_3.png" />
+    <Image Include="res\img\snail_left_4.png" />
+    <Image Include="res\img\snail_left_5.png" />
+    <Image Include="res\img\snail_left_6.png" />
+    <Image Include="res\img\snail_left_7.png" />
+    <Image Include="res\img\snail_right_0.png" />
+    <Image Include="res\img\snail_right_1.png" />
+    <Image Include="res\img\snail_right_2.png" />
+    <Image Include="res\img\snail_right_3.png" />
+    <Image Include="res\img\snail_right_4.png" />
+    <Image Include="res\img\snail_right_5.png" />
+    <Image Include="res\img\snail_right_6.png" />
+    <Image Include="res\img\snail_right_7.png" />
+    <Image Include="res\img\ui_quit_hovered.png" />
+    <Image Include="res\img\ui_quit_idle.png" />
+    <Image Include="res\img\ui_quit_pushed.png" />
+    <Image Include="res\img\ui_start_hovered.png" />
+    <Image Include="res\img\ui_start_idle.png" />
+    <Image Include="res\img\ui_start_pushed.png" />
+    <Image Include="res\img\warrior_idle_left_0.png" />
+    <Image Include="res\img\warrior_idle_left_1.png" />
+    <Image Include="res\img\warrior_idle_left_2.png" />
+    <Image Include="res\img\warrior_idle_left_3.png" />
+    <Image Include="res\img\warrior_idle_right_0.png" />
+    <Image Include="res\img\warrior_idle_right_1.png" />
+    <Image Include="res\img\warrior_idle_right_2.png" />
+    <Image Include="res\img\warrior_idle_right_3.png" />
+    <Image Include="res\img\warrior_walk_left_0.png" />
+    <Image Include="res\img\warrior_walk_left_1.png" />
+    <Image Include="res\img\warrior_walk_left_2.png" />
+    <Image Include="res\img\warrior_walk_left_3.png" />
+    <Image Include="res\img\warrior_walk_left_4.png" />
+    <Image Include="res\img\warrior_walk_left_5.png" />
+    <Image Include="res\img\warrior_walk_left_6.png" />
+    <Image Include="res\img\warrior_walk_left_7.png" />
+    <Image Include="res\img\warrior_walk_right_0.png" />
+    <Image Include="res\img\warrior_walk_right_1.png" />
+    <Image Include="res\img\warrior_walk_right_2.png" />
+    <Image Include="res\img\warrior_walk_right_3.png" />
+    <Image Include="res\img\warrior_walk_right_4.png" />
+    <Image Include="res\img\warrior_walk_right_5.png" />
+    <Image Include="res\img\warrior_walk_right_6.png" />
+    <Image Include="res\img\warrior_walk_right_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\mus\bgm.mp3" />
+    <Media Include="res\mus\hit.wav" />
+    <Media Include="res\mus\hurt.wav" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

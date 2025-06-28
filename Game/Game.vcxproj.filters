@@ -1,0 +1,352 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Platform.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="object.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="vector2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="atlas.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="animation.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="utils.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Platform.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MenuScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\img\alert.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\attack_down.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\attack_left.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\attack_right.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\attack_up.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\avatar_paimon.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\avatar_warrior.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\background.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_left_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_left_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_left_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_left_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_right_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_right_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_right_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\bee_right_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_left_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_left_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_left_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_left_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_left_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_left_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_right_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_right_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_right_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_right_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_right_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\boar_right_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\F_btn_pushed.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\F_btn_released.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\menu.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_left_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_left_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_left_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_left_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_left_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_left_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_right_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_right_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_right_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_right_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_right_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\paimon_right_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\shadow_enemy.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\shadow_player.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_6.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_left_7.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_6.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\snail_right_7.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\ui_quit_hovered.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\ui_quit_idle.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\ui_quit_pushed.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\ui_start_hovered.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\ui_start_idle.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\ui_start_pushed.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_left_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_left_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_left_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_left_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_right_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_right_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_right_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_idle_right_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_6.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_left_7.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_0.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_1.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_2.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_3.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_4.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_5.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_6.png">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="res\img\warrior_walk_right_7.png">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="res\mus\bgm.mp3">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="res\mus\hit.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+    <Media Include="res\mus\hurt.wav">
+      <Filter>资源文件</Filter>
+    </Media>
+  </ItemGroup>
+</Project>
