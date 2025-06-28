@@ -63,9 +63,7 @@ void Actor::input(const ExMessage& msg) {
 void Actor::update(int delta) {
 	//int dir = is_right_keydown - is_left_keydown;
 	if (moving_state != 0) {
-		run(delta);
-		//float distence = delta * walk_velocity * dir;
-		//position.x += distence;
+		moving_horizontal(delta);
 		is_running = true;
 		current_animation = is_facing_right ? &animation_run_right
 			: &animation_run_left;
@@ -74,47 +72,35 @@ void Actor::update(int delta) {
 		current_animation = is_facing_right ? &animation_idle_right
 			: &animation_idle_left;
 	}
-	move_and_collision(delta);
+	moving_vertical(delta);
 	current_animation->update(delta);
+	//if (position.y <= 0) system("pause");
 }
 
-void Actor::run(int delta) {
-	int x_dir = get_dir(moving_state & 0xC);
-	int y_dir = get_dir((moving_state & 0x3) << 2);
+void Actor::moving_horizontal(int delta) {
+	int x_dir = get_dir(moving_state & 0xC);		// x 的移动方向:0,1,-1
+	int y_dir = get_dir((moving_state & 0x3) << 2); // y 的移动方向:0,1,-1
 	
 	Vector2 distence = Vector2(x_dir, 0) * walk_velocity * delta;
 	position += distence;
-	cbox.position += distence;
+	update_cbox(distence);
 	//std::cout << "Moving_state: " << x_dir << " " << y_dir << std::endl;
 }
 
 void Actor::jump() {
 	if (!number_of_jumps) return;
 	number_of_jumps--;
-	velocity += { 0, jump_velocity };
+	velocity += { 0, -jump_velocity };
 }
 
-void Actor::move_and_collision(int delta) {
+void Actor::land() {
+	number_of_jumps = MAX_NUMBER_OF_JUMPS;
+}
+
+void Actor::moving_vertical(int delta) {
 	float last_velocity_y = velocity.y;
-	velocity.y += 0 * delta;
-	Vector2 del = velocity * (float)delta;
-	position += del;
-	cbox.position += del;
-
-	if (velocity.y > 0) {
-		
-	}
-
-
-
-}
-
-bool Actor::check_collision(const CollisionBox& cbox1, const CollisionBox& cbox2) {
-	Vector2 pos_1 = cbox1.position + Vector2(0, cbox1.size.y);
-	Vector2 pos_2 = cbox2.position + Vector2(0, cbox2.size.y);
-	float x1 = pos_1.x, y1 = pos_1.y;
-	float x2 = pos_2.x, y2 = pos_2.y;
-
-	return x1 < x2 + cbox2.size.x && x1 + cbox1.size.x > x2 &&
-		y1 < y2 + cbox2.size.y && y1 + cbox1.size.y > y2;
+	velocity.y += gravity * delta;
+	Vector2 distence = velocity * (float)delta;
+	position += distence;
+	update_cbox(distence);
 }

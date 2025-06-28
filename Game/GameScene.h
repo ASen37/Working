@@ -1,5 +1,6 @@
 #pragma once
 #include "scene.h"
+#include "Actor.h"
 
 class GameScene : public Scene
 {
@@ -7,16 +8,18 @@ public:
 	GameScene() = default;
 	~GameScene() = default;
 
-	virtual void onEnter() override;
-	virtual void onExit() override;
+	void onEnter() override;
+	void onExit() override;
 
-	virtual void render() override;
-	virtual void update(int delta) override;
-	virtual void input(const ExMessage& msg) override;
+	void render() override;
+	void update(int delta) override;
+	void input(const ExMessage& msg) override;
 
-	virtual void clean();
+	void move_and_collision(int delta) override;
+	void clean() override;
 
+	inline bool check_collision(const Object::CollisionBox& cbox1, const Object::CollisionBox& cbox2);
 public:
-	SceneID id = SceneID::GameScene;
+	const SceneID id = SceneID::GameScene;
 
 };

@@ -21,6 +21,10 @@ public:
 
 	void clean() {}
 	void switchTo(SceneID id);
+	void switchTo(Scene* scene);
+
+	void set_current_scene(Scene* scene) { current_scene = scene; }
+	const Scene* get_current_scene() const { return current_scene; }
 
 	static SceneManager& GetInstance() {
 		static SceneManager instance;
@@ -30,6 +34,6 @@ public:
 private:
 	SceneManager() {}
 
-public:
+private:
 	Scene* current_scene = nullptr;
 };

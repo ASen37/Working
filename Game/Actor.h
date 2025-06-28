@@ -4,6 +4,7 @@
 #include "object.h"
 #include "animation.h"
 #include "utils.h"
+#define MAX_NUMBER_OF_JUMPS 2
 
 class SceneManager;
 
@@ -38,10 +39,8 @@ public:
 
 		position = { 100, 100 };
 		size = { (float)atlas_player_idle_right.get_image(0)->getwidth() + 10.0f, 
-				 (float)atlas_player_idle_right.get_image(0)->getheight()  + 10.0f};
-		std::cout << position.x << " " << position.y << " " << size.x << " " << size.y << std::endl;
-		bindCBox(position, size + Vector2(100.0f, 100.0f));
-		std::cout << cbox.position.x << " " << cbox.position.y << " " << cbox.size.x << " " << cbox.size.y << std::endl;
+				 (float)atlas_player_idle_right.get_image(0)->getheight()  + 10.0f };
+		bindCBox(size);
 		is_cbox_hide = false;
 	}
 	~Actor() {
@@ -54,10 +53,13 @@ public:
 	void clean() override;
 	void run(int delta);
 
+	void moving_horizontal(int delta);
+	void moving_vertical(int delta);
 	void jump();
-	bool check_collision(const CollisionBox& cbox1, const CollisionBox& cbox2);
-	void move_and_collision(int delta);
+	void land();
 
+	Vector2 get_velocity() const { return velocity; }
+	void set_velocity(float x, float y) { velocity = { x, y }; }
 
 private:
 	Animation animation_idle_left;
@@ -69,7 +71,7 @@ private:
 
 private:
 	uint8_t moving_state = 0x0;
-	int number_of_jumps = 1;
+	int number_of_jumps = MAX_NUMBER_OF_JUMPS;
 
 	float walk_velocity = 0.32f;
 	float jump_velocity = 1.0f;

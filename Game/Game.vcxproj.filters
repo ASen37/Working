@@ -27,6 +27,9 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="object.h">

@@ -41,3 +41,13 @@ inline int get_dir(int code) {
 	if (code == 0x4) return -1;
 	return 0;
 }
+
+// 切换到中文键盘的拼音模式
+inline void switch_keyboard()
+{
+	// 模拟按键CTRL + SPACE 切换键盘到英文模式
+	keybd_event(VK_CONTROL, 0, 0, 0);
+	keybd_event(VK_SPACE, 0, 0, 0);
+	keybd_event(VK_CONTROL, 0, KEYEVENTF_KEYUP, 0);
+	keybd_event(VK_SPACE, 0, KEYEVENTF_KEYUP, 0);
+}

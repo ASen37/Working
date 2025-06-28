@@ -11,7 +11,7 @@ public:
 	Platform(const Vector2& pos, const Vector2& s) {
 		position = pos;
 		size = s;
-		bindCBox(position, size);
+		bindCBox(size);
 		is_cbox_hide = false;
 	}
 	~Platform() = default;

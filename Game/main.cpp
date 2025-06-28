@@ -23,6 +23,7 @@ Atlas atl_test;
 Animation ani_test;
 
 Platform* platform = nullptr;
+Platform* platform2 = nullptr;
 Actor* player = nullptr;
 
 SceneManager& manager = SceneManager::GetInstance();
@@ -36,6 +37,14 @@ void load_resources() {
     atlas_player_run_right.load_from_file(_T("res/img/warrior_walk_right_%d.png"), 8);
     player = new Actor();
     platform = new Platform(Vector2(100, 400), Vector2(800, 100));
+    platform2 = new Platform(Vector2(100, 200), Vector2(800, 30));
+    game = new GameScene();
+    game->addObject(player);
+    game->addObject(platform);
+    game->addObject(platform2);
+    
+    manager.set_current_scene(game);
+    manager.switchTo(game);
 }
 
 /*
@@ -49,6 +58,7 @@ int main()
     initgraph(windowWidth, windowHeight, 1);
     setbkcolor(WHITE);
     load_resources();
+    switch_keyboard();
 
 
     BeginBatchDraw();
@@ -57,20 +67,23 @@ int main()
         DWORD frame_start_ticks = GetTickCount();
         // get message
         while (peekmessage(&msg)) {
-            player->input(msg);
+            //player->input(msg);
+            manager.input(msg);
         }
         static DWORD last_ticks = GetTickCount();
         DWORD current_ticks = GetTickCount();
         DWORD delta_ticks = current_ticks - last_ticks;
         // update
-        player->update(delta_ticks);
+        //player->update(delta_ticks);
+        manager.update(delta_ticks);
         
         last_ticks = current_ticks;
 
         cleardevice();
         // draw or render
-        player->render();
-        platform->render();
+        /*player->render();
+        platform->render();*/
+        manager.render();
 
         FlushBatchDraw();
 

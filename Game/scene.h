@@ -24,10 +24,11 @@ public:
 	virtual void update(int delta) = 0;
 	virtual void input(const ExMessage& msg) = 0;
 
-	void clean();
-	void switchTo();
+	virtual void move_and_collision(int delta) {}
+	virtual void clean() {}
 
-	const std::vector<Object*>& get_obj() const { return vec_objects; }
+
+	const std::vector<Object*>& get_objs() const { return vec_objects; }
 	const std::vector<Actor*>& get_actors() const { return vec_actors; }
 
 	template<typename T>
