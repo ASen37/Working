@@ -35,13 +35,14 @@ void load_resources() {
     atlas_player_idle_right.load_from_file(_T("res/img/warrior_idle_right_%d.png"), 4);
     atlas_player_run_left.load_from_file(_T("res/img/warrior_walk_left_%d.png"), 8);
     atlas_player_run_right.load_from_file(_T("res/img/warrior_walk_right_%d.png"), 8);
-    player = new Actor();
-    platform = new Platform(Vector2(100, 400), Vector2(800, 100));
+
+    player = new Actor({100, 100}, {100, 125});
+    platform = new Platform(Vector2(100, 400), Vector2(800, 100)); // center_ 500, 450
     platform2 = new Platform(Vector2(100, 200), Vector2(800, 30));
     game = new GameScene();
     game->addObject(player);
     game->addObject(platform);
-    game->addObject(platform2);
+    //game->addObject(platform2);
     
     manager.set_current_scene(game);
     manager.switchTo(game);

@@ -65,6 +65,9 @@
     <ClInclude Include="SceneManager.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="collisionBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\img\alert.png">

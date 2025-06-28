@@ -3,6 +3,8 @@
 void Actor::render() {
 	if (!is_cbox_hide)
 		Object::render_cbox();
+	update_position();
+	//std::cout << "Position: " << position.x << " " << position.y << std::endl;
 	current_animation->render(position.x, position.y);
 }
 
@@ -26,7 +28,7 @@ void Actor::input(const ExMessage& msg) {
 			break;
 		case 0x57: // W
 			moving_state |= static_cast<uint8_t>(MovingDir::U);
-			jump();
+			//jump();
 			break;
 		case 0x53: // S
 			moving_state |= static_cast<uint8_t>(MovingDir::D);
@@ -81,14 +83,14 @@ void Actor::moving_horizontal(int delta) {
 	int x_dir = get_dir(moving_state & 0xC);		// x 的移动方向:0,1,-1
 	int y_dir = get_dir((moving_state & 0x3) << 2); // y 的移动方向:0,1,-1
 	
-	Vector2 distence = Vector2(x_dir, 0) * walk_velocity * delta;
-	position += distence;
-	update_cbox(distence);
+	Vector2 distence = Vector2(x_dir, y_dir) * walk_velocity * delta;
+	center_pos += distence;
+	cbox.bind(center_pos);
 	//std::cout << "Moving_state: " << x_dir << " " << y_dir << std::endl;
 }
 
 void Actor::jump() {
-	if (!number_of_jumps) return;
+	//if (!number_of_jumps) return;
 	number_of_jumps--;
 	velocity += { 0, -jump_velocity };
 }
@@ -99,8 +101,8 @@ void Actor::land() {
 
 void Actor::moving_vertical(int delta) {
 	float last_velocity_y = velocity.y;
-	velocity.y += gravity * delta;
+	velocity.y += 0 * delta;
 	Vector2 distence = velocity * (float)delta;
-	position += distence;
-	update_cbox(distence);
+	center_pos += distence;
+	cbox.bind(center_pos);
 }

@@ -4,6 +4,7 @@
 #include "object.h"
 #include "animation.h"
 #include "utils.h"
+#include "collisionBox.h"
 #define MAX_NUMBER_OF_JUMPS 2
 
 class SceneManager;
@@ -26,7 +27,7 @@ public:
 		R = 0x8
 	};
 public:
-	Actor() {
+	Actor(Vector2 pos, Vector2 size) : Object(pos, size) {
 		animation_idle_left.set_atlas(&atlas_player_idle_left);
 		animation_idle_right.set_atlas(&atlas_player_idle_right);
 		animation_run_left.set_atlas(&atlas_player_run_left);
@@ -37,10 +38,9 @@ public:
 		animation_run_left.set_interval(120);
 		animation_run_right.set_interval(120);
 
-		position = { 100, 100 };
-		size = { (float)atlas_player_idle_right.get_image(0)->getwidth() + 10.0f, 
-				 (float)atlas_player_idle_right.get_image(0)->getheight()  + 10.0f };
-		bindCBox(size);
+		cbox = CollisionBox(size);
+		cbox.bind(center_pos);
+
 		is_cbox_hide = false;
 	}
 	~Actor() {
@@ -51,7 +51,6 @@ public:
 	void update(int delta) override;
 	void render() override;
 	void clean() override;
-	void run(int delta);
 
 	void moving_horizontal(int delta);
 	void moving_vertical(int delta);
@@ -73,8 +72,8 @@ private:
 	uint8_t moving_state = 0x0;
 	int number_of_jumps = MAX_NUMBER_OF_JUMPS;
 
-	float walk_velocity = 0.32f;
-	float jump_velocity = 1.0f;
+	const float walk_velocity = 0.32f;
+	const float jump_velocity = 1.0f;
 
 	bool is_left_keydown = false;
 	bool is_right_keydown = false;

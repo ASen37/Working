@@ -22,11 +22,11 @@ void SceneManager::input(const ExMessage& msg) {
 
 void SceneManager::switchTo(SceneID id) {
 	switch (id) {
-	case SceneID::MenuScene:
+	case SceneID::MENU:
 		current_scene = menu;
 		current_scene->onEnter();
 		break;
-	case SceneID::GameScene:
+	case SceneID::GAME:
 		current_scene = game;
 		current_scene->onEnter();
 		break;

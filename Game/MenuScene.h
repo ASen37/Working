@@ -18,5 +18,5 @@ public:
 	virtual void switchTo();
 
 public:
-	const SceneID id = SceneID::MenuScene;
+	const SceneID id = SceneID::MENU;
 };

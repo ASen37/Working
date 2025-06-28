@@ -140,6 +140,7 @@
     <ClInclude Include="Actor.h" />
     <ClInclude Include="animation.h" />
     <ClInclude Include="atlas.h" />
+    <ClInclude Include="collisionBox.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="MenuScene.h" />
     <ClInclude Include="object.h" />

@@ -9,9 +9,9 @@ class Scene
 protected:
 	enum class SceneID
 	{
-		Manager = 0,
-		MenuScene,
-		GameScene
+		MANAGER = 0,
+		MENU,
+		GAME
 	};
 public:
 	Scene() = default;

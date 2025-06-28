@@ -18,8 +18,8 @@ public:
 	void move_and_collision(int delta) override;
 	void clean() override;
 
-	inline bool check_collision(const Object::CollisionBox& cbox1, const Object::CollisionBox& cbox2);
+	inline bool check_collision(const CollisionBox& cbox1, const CollisionBox& cbox2);
 public:
-	const SceneID id = SceneID::GameScene;
+	const SceneID id = SceneID::GAME;
 
 };

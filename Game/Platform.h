@@ -8,10 +8,9 @@ public:
 	Platform() {
 		is_cbox_hide = false;
 	}
-	Platform(const Vector2& pos, const Vector2& s) {
-		position = pos;
-		size = s;
-		bindCBox(size);
+	Platform(Vector2 pos, Vector2 size) : Object(pos, size) {
+		cbox = CollisionBox(size);
+		cbox.bind(center_pos);
 		is_cbox_hide = false;
 	}
 	~Platform() = default;
