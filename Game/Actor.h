@@ -5,7 +5,10 @@
 #include "animation.h"
 #include "utils.h"
 #include "collisionBox.h"
+#include "camera.h"
 #define MAX_NUMBER_OF_JUMPS 2
+#define MAX_MOVE_H_VELOCITY 0.32f
+#define MAX_MOVE_V_VELOCITY 0.32f
 
 class SceneManager;
 
@@ -15,6 +18,7 @@ extern Atlas atlas_player_run_left;
 extern Atlas atlas_player_run_right;
 
 extern SceneManager& manager;
+extern Camera main_camera;
 
 class Actor : public Object
 {
@@ -49,7 +53,7 @@ public:
 
 	void input(const ExMessage& msg);
 	void update(int delta) override;
-	void render() override;
+	void render(const Camera& camera) override;
 	void clean() override;
 
 	void moving_horizontal(int delta);
@@ -59,6 +63,10 @@ public:
 
 	Vector2 get_velocity() const { return velocity; }
 	void set_velocity(float x, float y) { velocity = { x, y }; }
+	inline void position_correction(const Vector2& delta) {
+		center_pos += delta;
+		cbox.bind(center_pos);
+	}
 
 private:
 	Animation animation_idle_left;
@@ -72,8 +80,8 @@ private:
 	uint8_t moving_state = 0x0;
 	int number_of_jumps = MAX_NUMBER_OF_JUMPS;
 
-	const float walk_velocity = 0.32f;
-	const float jump_velocity = 1.0f;
+	float walk_velocity = MAX_MOVE_H_VELOCITY;
+	float jump_velocity = 1.0f;
 
 	bool is_left_keydown = false;
 	bool is_right_keydown = false;

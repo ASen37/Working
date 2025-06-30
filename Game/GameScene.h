@@ -1,6 +1,9 @@
 #pragma once
 #include "scene.h"
 #include "Actor.h"
+#include "camera.h"
+
+extern Camera main_camera;
 
 class GameScene : public Scene
 {
@@ -11,7 +14,7 @@ public:
 	void onEnter() override;
 	void onExit() override;
 
-	void render() override;
+	void render(const Camera& camera) override;
 	void update(int delta) override;
 	void input(const ExMessage& msg) override;
 

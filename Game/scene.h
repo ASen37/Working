@@ -2,6 +2,7 @@
 #include <graphics.h>
 #include <vector>
 #include "object.h"
+#include "camera.h"
 
 class Actor;
 class Scene
@@ -20,7 +21,7 @@ public:
 	virtual void onEnter() = 0;
 	virtual void onExit() = 0;
 
-	virtual void render() = 0;
+	virtual void render(const Camera& camera) = 0;
 	virtual void update(int delta) = 0;
 	virtual void input(const ExMessage& msg) = 0;
 

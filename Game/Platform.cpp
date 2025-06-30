@@ -9,8 +9,8 @@ void Platform::update(int delta) {
 	//std::cout << "----------------------------------" << std::endl;
 }
 
-void Platform::render() {
-	Object::render_cbox();
+void Platform::render(const Camera& camera) {
+	Object::render_cbox(camera);
 }
 
 void Platform::clean() {

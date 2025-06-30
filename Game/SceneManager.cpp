@@ -12,8 +12,8 @@ void SceneManager::update(int delta) {
 	current_scene->update(delta);
 }
 
-void SceneManager::render() {
-	current_scene->render();
+void SceneManager::render(const Camera& camera) {
+	current_scene->render(camera);
 }
 
 void SceneManager::input(const ExMessage& msg) {

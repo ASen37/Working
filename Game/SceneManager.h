@@ -15,7 +15,7 @@ public:
 	void onEnter() override;
 	void onExit() override;
 
-	void render() override;
+	void render(const Camera& camera) override;
 	void update(int delta) override;
 	void input(const ExMessage& msg) override;
 

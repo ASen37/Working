@@ -14,7 +14,7 @@ public:
 	inline const Vector2& cbox_get_size() const { return cbox_size; }
 	
 	void cbox_set_size(Vector2& new_size) { cbox_size = new_size; }
-	void bind(const Vector2& actor_center_pos) {
+	inline void bind(const Vector2& actor_center_pos) {
 		cbox_center_pos = actor_center_pos;
 	}
 private:

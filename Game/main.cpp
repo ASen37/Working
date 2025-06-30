@@ -22,8 +22,10 @@ Atlas atlas_player_run_right;
 Atlas atl_test;
 Animation ani_test;
 
+Camera main_camera;
 Platform* platform = nullptr;
 Platform* platform2 = nullptr;
+Platform* platform3 = nullptr;
 Actor* player = nullptr;
 
 SceneManager& manager = SceneManager::GetInstance();
@@ -38,11 +40,13 @@ void load_resources() {
 
     player = new Actor({100, 100}, {100, 125});
     platform = new Platform(Vector2(100, 400), Vector2(800, 100)); // center_ 500, 450
-    platform2 = new Platform(Vector2(100, 200), Vector2(800, 30));
+    platform2 = new Platform(Vector2(300, 200), Vector2(800, 30));
+    //platform3 = new Platform(Vector2(500, 500), Vector2(800, 30));
     game = new GameScene();
     game->addObject(player);
     game->addObject(platform);
-    //game->addObject(platform2);
+    game->addObject(platform2);
+    //game->addObject(platform3);
     
     manager.set_current_scene(game);
     manager.switchTo(game);
@@ -84,7 +88,7 @@ int main()
         // draw or render
         /*player->render();
         platform->render();*/
-        manager.render();
+        manager.render(main_camera);
 
         FlushBatchDraw();
 

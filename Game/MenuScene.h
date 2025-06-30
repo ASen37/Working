@@ -10,7 +10,7 @@ public:
 	virtual void onEnter() override;
 	virtual void onExit() override;
 
-	virtual void render() override;
+	virtual void render(const Camera& camera) override;
 	virtual void update(int delta) override;
 	virtual void input(const ExMessage& msg) override;
 

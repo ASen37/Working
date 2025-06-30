@@ -16,7 +16,7 @@ public:
 	~Platform() = default;
 
 	void update(int delta) override;
-	void render() override;
+	void render(const Camera& camera) override;
 	void clean() override;
 
 private:

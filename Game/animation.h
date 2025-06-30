@@ -3,6 +3,7 @@
 #include <functional>
 #include "atlas.h"
 #include "utils.h"
+#include "camera.h"
 
 class Animation
 {
@@ -21,21 +22,11 @@ public:
 		m_atlas = atlas;
 	}
 
-	void set_interval(int val) {
-		interval = val;
-	}
+	void set_interval(int val) { interval = val; }
+	void set_loop(bool flag) { is_loop = flag; }
+	int get_idx_frame() const { return idx_frame; }
 
-	void set_loop(bool flag) {
-		is_loop = flag;
-	}
-
-	int get_idx_frame() const {
-		return idx_frame;
-	}
-
-	IMAGE* get_frame() const {
-		return m_atlas->get_image(idx_frame);
-	}
+	IMAGE* get_frame() const { return m_atlas->get_image(idx_frame); }
 
 	bool check_finished() {
 		if (is_loop) return false;
@@ -55,8 +46,9 @@ public:
 		}
 	}
 
-	void render(int x, int y) const {
-		putimage_alpha(x, y, m_atlas->get_image(idx_frame));
+	void render(const Camera& camera, int x, int y) const {
+		//putimage_alpha(x, y, m_atlas->get_image(idx_frame));
+		putimage_alpha(camera, x, y, m_atlas->get_image(idx_frame));
 	}
 
 	void set_callback(std::function<void()> callback) {
