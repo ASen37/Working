@@ -5,6 +5,7 @@
 #include <vector>
 #include "vector2.h"
 #include "collisionBox.h"
+#include "camera.h"
 
 class Object
 {
@@ -14,12 +15,12 @@ public:
 		: position(pos)
 		, size(size) {
 		center_pos = position + size * 0.5f;
-		cbox.bind(center_pos);
+		//cbox.bind(center_pos);
 	}
 	~Object() = default;
 
 	virtual void update(int delta) = 0;
-	virtual void render() = 0;
+	virtual void render(const Camera& camera) = 0;
 	virtual void clean() = 0;
 
 	/*
@@ -36,27 +37,29 @@ public:
 		position = center_pos - size * 0.5f;
 	}
 
-	/*
-	 * @brief 用于将碰撞盒与渲染“盒”中心对齐
-	 */
-	void bindCBox(Vector2 cbox_size) {
-		float cx = position.x + size.x * 0.5f;
-		float cy = position.y + size.y * 0.5f;
-		cbox.center_pos = Vector2(cx, cy);
-		cbox.size = cbox_size;
-		cbox.position.x = cx - cbox.size.x * 0.5f;
-		cbox.position.y = cy - cbox.size.y * 0.5f;
-	}
-
 	void render_cbox() {
 		setlinecolor(RGB(255, 0, 0));
 		const Vector2& cbox_center_pos = cbox.cbox_get_center_pos();
 		const Vector2& cbox_size = cbox.cbox_get_size();
 
-		float x1 = center_pos.x - cbox_size.x * 0.5f;
+		float x1 = cbox_center_pos.x - cbox_size.x * 0.5f;
 		float y1 = cbox_center_pos.y - cbox_size.y * 0.5f;
 		float x2 = cbox_center_pos.x + cbox_size.x * 0.5f;
 		float y2 = cbox_center_pos.y + cbox_size.y * 0.5f;
+
+		rectangle(x1, y1, x2, y2);
+	}
+
+	void render_cbox(const Camera& camera) {
+		setlinecolor(RGB(255, 0, 0));
+		const Vector2& cbox_center_pos = cbox.cbox_get_center_pos();
+		Vector2 render_center_pos = cbox_center_pos - camera.get_position();
+		const Vector2& cbox_size = cbox.cbox_get_size();
+
+		float x1 = render_center_pos.x - cbox_size.x * 0.5f;
+		float y1 = render_center_pos.y - cbox_size.y * 0.5f;
+		float x2 = render_center_pos.x + cbox_size.x * 0.5f;
+		float y2 = render_center_pos.y + cbox_size.y * 0.5f;
 
 		rectangle(x1, y1, x2, y2);
 	}
